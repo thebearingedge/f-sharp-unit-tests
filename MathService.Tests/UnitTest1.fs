@@ -6,11 +6,9 @@ open MathService
 
 [<TestFixture>]
 type TestClass () =
-    
-    [<Test>]
-    member this.TestMethodPassing() = Assert.True(true)
 
     [<Test>]
-    member this.FailEveryTime() = Assert.True(false)
-
-
+    member this.TestEventSequence() =
+      let expected = Seq.empty<int>
+      let actual = MyMath.squaresOfOdds [2; 4; 6; 8; 10]
+      Assert.That(expected, Is.EqualTo(actual))

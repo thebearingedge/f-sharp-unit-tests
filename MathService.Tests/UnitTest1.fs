@@ -4,10 +4,13 @@ open System
 open NUnit.Framework
 open MathService
 
-[<SetUp>]
-let Setup () =
-    ()
+[<TestFixture>]
+type TestClass () =
+    
+    [<Test>]
+    member this.TestMethodPassing() = Assert.True(true)
 
-[<Test>]
-let Test1 () =
-    Assert.Pass()
+    [<Test>]
+    member this.FailEveryTime() = Assert.True(false)
+
+

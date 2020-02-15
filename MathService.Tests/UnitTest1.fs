@@ -1,6 +1,8 @@
-module MathService.Tests
+namespace MathService.Tests
 
+open System
 open NUnit.Framework
+open MathService
 
 [<SetUp>]
 let Setup () =
